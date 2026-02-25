@@ -1,5 +1,6 @@
 import BigPortal from '@/assets/images/big_portal.png';
 import SmallPortal from '@/assets/images/small_portal.png';
+
 import styles from './Fallback.module.css';
 
 type Props = {

@@ -18,6 +18,9 @@ npm run build
 # Lint code
 npm run lint
 
+# Lint and auto-fix issues
+npm run lint -- --fix
+
 # Format code with Prettier
 npm run format
 

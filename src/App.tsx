@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CharactersList, CharacterDetail } from '@/pages';
+
 import { Header, Footer } from '@/components';
+import { CharactersList, CharacterDetail } from '@/pages';
 import './App.css';
 
 function App() {
