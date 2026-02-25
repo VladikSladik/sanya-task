@@ -1,0 +1,14 @@
+import { Fallback } from '@/components/Fallback/';
+
+/**
+ * Страница со списком персонажей
+ */
+export const CharactersList = () => {
+  return (
+    <div>
+      <h1>Список персонажей</h1>
+      <p>Здесь будет отображаться список персонажей из Рика и Морти</p>
+      <Fallback />
+    </div>
+  );
+};

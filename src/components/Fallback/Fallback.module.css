@@ -1,0 +1,27 @@
+.fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.fallback span {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+
+
+
+@keyframes myAnimation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+.fallback img {
+    max-width: 100%;
+    height: auto;
+    animation: myAnimation 1s linear infinite
+}
