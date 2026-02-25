@@ -1,5 +1,9 @@
 import apiClient from './client';
-import type { ApiResponse, Character, CharacterFilters} from '../types/character';
+import type {
+  ApiResponse,
+  Character,
+  CharacterFilters,
+} from '../types/character';
 
 /**
  * Получить список персонажей с фильтрами

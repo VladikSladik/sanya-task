@@ -1,2 +1,2 @@
 export { getCharacters, getCharacterById } from './characterApi';
-export { default as apiClient } from './client';
+export { apiClient } from './client';
