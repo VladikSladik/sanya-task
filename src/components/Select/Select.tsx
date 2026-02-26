@@ -1,5 +1,11 @@
 import clsx from 'clsx';
-import { type ComponentType, type ReactNode, useState } from 'react';
+import {
+  type ComponentType,
+  type ReactNode,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
 
 import { Triangle } from '@/components/Select/Triangle.tsx';
 
@@ -36,6 +42,8 @@ export const Select = <T extends ReactNode>({
   OptionComponent = DefaultOptionComponent
 }: Props<T>) => {
   const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef<HTMLDivElement | null>(null);
+
   const isSmall = variant === 'small';
 
   const selectedValue = options.find((item) => value === item.value);
@@ -49,8 +57,24 @@ export const Select = <T extends ReactNode>({
     setIsOpen(false);
   };
 
+  const handleClickOutside = (e: MouseEvent) => {
+    if (!isOpen) return;
+
+    if (selectRef.current && !selectRef.current.contains(e.target as Node)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  });
+
   return (
-    <div>
+    <div ref={selectRef}>
       <div
         className={clsx(styles.wrapper, isSmall && styles.wrapperSmall)}
         onClick={handleClick}
