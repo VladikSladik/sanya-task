@@ -14,7 +14,14 @@ type Props<T extends ReactNode> = {
   bagesComponent?: ReactNode;
 };
 
-export const Select = <T extends ReactNode>({ value, options, onChange, placeholder, bagesComponent, variant = 'large' }: Props<T>) => {
+export const Select = <T extends ReactNode>({
+  value,
+  options,
+  onChange,
+  placeholder,
+  bagesComponent,
+  variant = 'large'
+}: Props<T>) => {
   const [isOpen, setIsOpen] = useState(false);
   const isSmall = variant === 'small';
 
@@ -30,7 +37,10 @@ export const Select = <T extends ReactNode>({ value, options, onChange, placehol
 
   return (
     <div>
-      <div className={clsx(styles.wrapper, isSmall && styles.wrapperSmall)} onClick={handleClick}>
+      <div
+        className={clsx(styles.wrapper, isSmall && styles.wrapperSmall)}
+        onClick={handleClick}
+      >
         <div>
           {!selectedValue && placeholder && <span>{placeholder}</span>}
           {selectedValue && <span>{selectedValue.label}</span>}
@@ -40,7 +50,12 @@ export const Select = <T extends ReactNode>({ value, options, onChange, placehol
       </div>
 
       {isOpen && (
-        <div className={clsx(styles.optionsWrapper, isSmall && styles.wrapperSmall)}>
+        <div
+          className={clsx(
+            styles.optionsWrapper,
+            isSmall && styles.wrapperSmall
+          )}
+        >
           {options.map((item) => (
             <div onClick={() => handleChange(item.value)}>{item.label}</div>
           ))}

@@ -7,12 +7,18 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="app">
+      <div className='app'>
         <Header />
-        <main className="main-content">
+        <main className='main-content'>
           <Routes>
-            <Route path="/" element={<CharactersList />} />
-            <Route path="/character/:id" element={<CharacterDetail />} />
+            <Route
+              path='/'
+              element={<CharactersList />}
+            />
+            <Route
+              path='/character/:id'
+              element={<CharacterDetail />}
+            />
           </Routes>
         </main>
         <Footer />

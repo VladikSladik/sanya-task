@@ -8,7 +8,7 @@ export const Triangle = ({ isOpen }: { isOpen: boolean }) => {
         borderLeft: '5px solid transparent',
         borderRight: '5px solid transparent',
         transition: '0.3s',
-        borderTop: '5px solid black',
+        borderTop: '5px solid black'
       }}
     />
   );

@@ -13,7 +13,10 @@ export const Fallback = ({ label, variant = 'large' }: Props) => {
   return (
     <div className={styles.fallback}>
       {label && isLarge && <span>{label}</span>}
-      <img src={isLarge ? BigPortal : SmallPortal} alt="fallback" />
+      <img
+        src={isLarge ? BigPortal : SmallPortal}
+        alt='fallback'
+      />
     </div>
   );
 };

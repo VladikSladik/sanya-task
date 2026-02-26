@@ -9,12 +9,12 @@ import { Select } from '@/components/Select';
 const options = [
   {
     value: 1,
-    label: 'ALO',
+    label: 'ALO'
   },
   {
     value: 2,
-    label: 'ZDAROVA',
-  },
+    label: 'ZDAROVA'
+  }
 ];
 export const CharactersList = () => {
   const [value, setValue] = useState(options[0].value);
@@ -22,7 +22,12 @@ export const CharactersList = () => {
     <div>
       <h1>Список персонажей</h1>
       <p>Здесь будет отображаться список персонажей из Рика и Морти</p>
-      <Select variant={'small'} options={options} value={value} onChange={(val) => setValue(val)} />
+      <Select
+        variant={'small'}
+        options={options}
+        value={value}
+        onChange={(val) => setValue(val)}
+      />
     </div>
   );
 };
