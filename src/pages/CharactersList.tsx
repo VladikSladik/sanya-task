@@ -16,6 +16,7 @@ const options = [
     label: 'ZDAROVA'
   }
 ];
+
 export const CharactersList = () => {
   const [value, setValue] = useState(options[0].value);
   return (

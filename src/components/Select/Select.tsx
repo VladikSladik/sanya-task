@@ -1,9 +1,18 @@
 import clsx from 'clsx';
-import { type ReactNode, useState } from 'react';
+import { type ComponentType, type ReactNode, useState } from 'react';
 
 import { Triangle } from '@/components/Select/Triangle.tsx';
 
 import styles from './Select.module.css';
+
+type Option<T> = {
+  value: T;
+  label: string;
+};
+
+type OptionProps<T> = {
+  option: Option<T>;
+};
 
 type Props<T extends ReactNode> = {
   value: T;
@@ -11,7 +20,11 @@ type Props<T extends ReactNode> = {
   options: Array<{ value: T; label: string }>;
   placeholder?: string;
   variant?: 'small' | 'large';
-  bagesComponent?: ReactNode;
+  OptionComponent?: ComponentType<OptionProps<T>>;
+};
+
+const DefaultOptionComponent = <T,>({ option }: OptionProps<T>) => {
+  return <span className={styles.option}>{option.label}</span>;
 };
 
 export const Select = <T extends ReactNode>({
@@ -19,8 +32,8 @@ export const Select = <T extends ReactNode>({
   options,
   onChange,
   placeholder,
-  bagesComponent,
-  variant = 'large'
+  variant = 'large',
+  OptionComponent = DefaultOptionComponent
 }: Props<T>) => {
   const [isOpen, setIsOpen] = useState(false);
   const isSmall = variant === 'small';
@@ -30,6 +43,7 @@ export const Select = <T extends ReactNode>({
   const handleClick = () => {
     setIsOpen((prev) => !prev);
   };
+
   const handleChange = (value: T) => {
     onChange(value);
     setIsOpen(false);
@@ -44,7 +58,6 @@ export const Select = <T extends ReactNode>({
         <div>
           {!selectedValue && placeholder && <span>{placeholder}</span>}
           {selectedValue && <span>{selectedValue.label}</span>}
-          {bagesComponent}
         </div>
         <Triangle isOpen={isOpen} />
       </div>
@@ -57,7 +70,9 @@ export const Select = <T extends ReactNode>({
           )}
         >
           {options.map((item) => (
-            <div onClick={() => handleChange(item.value)}>{item.label}</div>
+            <div onClick={() => handleChange(item.value)}>
+              <OptionComponent option={item} />
+            </div>
           ))}
         </div>
       )}

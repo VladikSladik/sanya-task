@@ -22,3 +22,7 @@
   font-size: 14px;
   padding: 2px 5px;
 }
+
+.option {
+  cursor: pointer;
+}
