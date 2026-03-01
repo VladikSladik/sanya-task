@@ -1,0 +1,28 @@
+.wrapper {
+  padding: 15px;
+  border: 1px #393939 solid;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.optionsWrapper {
+  padding: 15px;
+  border: 1px #393939 solid;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.wrapperSmall {
+  font-size: 14px;
+  padding: 2px 5px;
+}
+
+.option {
+  cursor: pointer;
+}
