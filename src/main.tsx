@@ -1,8 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-/// <reference types="vite/client" />
-/// <reference types="vite-plugin-svgr/client" />
 import './index.css';
 import App from './App.tsx';
 
