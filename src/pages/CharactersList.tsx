@@ -9,6 +9,7 @@ import { Input } from '@/components/Input';
  */
 export const CharactersList = () => {
   const [value, setValue] = useState('');
+  const [value2, setvalue2] = useState('');
   return (
     <div>
       <h1>Список персонажей</h1>
@@ -18,8 +19,15 @@ export const CharactersList = () => {
       <div style={{ maxWidth: 200 }}>
         <Input
           icon={<SearchIcon />}
-          value={value}
+          value={value2}
           variant={'bordered'}
+          onChange={(value) => setvalue2(value)}
+          placeholder={'Введите текст'}
+        />
+
+        <Input
+          value={value}
+          variant={'underlined'}
           onChange={(value) => setValue(value)}
           placeholder={'Введите текст'}
         />

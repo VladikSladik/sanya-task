@@ -1,7 +1,7 @@
-import clsx from 'clsx';
 import type { ChangeEvent, ReactNode } from 'react';
 
 import CloseIcon from '@/assets/icons/close_icon.svg?react';
+import clsx from '@/utils/classNames.ts';
 
 import styles from './Input.module.css';
 
