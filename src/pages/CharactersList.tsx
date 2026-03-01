@@ -1,34 +1,29 @@
 import { useState } from 'react';
 
-import { Select } from '@/components/Select';
+import SearchIcon from '@/assets/icons/search.svg?react';
+import { Fallback } from '@/components/Fallback';
+import { Input } from '@/components/Input';
 
 /**
  * Страница со списком персонажей
  */
-
-const options = [
-  {
-    value: 1,
-    label: 'ALO'
-  },
-  {
-    value: 2,
-    label: 'ZDAROVA'
-  }
-];
-
 export const CharactersList = () => {
-  const [value, setValue] = useState(options[0].value);
+  const [value, setValue] = useState('');
   return (
     <div>
       <h1>Список персонажей</h1>
       <p>Здесь будет отображаться список персонажей из Рика и Морти</p>
-      <Select
-        variant={'small'}
-        options={options}
-        value={value}
-        onChange={(val) => setValue(val)}
-      />
+      <Fallback />
+
+      <div style={{ maxWidth: 200 }}>
+        <Input
+          icon={<SearchIcon />}
+          value={value}
+          variant={'bordered'}
+          onChange={(value) => setValue(value)}
+          placeholder={'Введите текст'}
+        />
+      </div>
     </div>
   );
 };
