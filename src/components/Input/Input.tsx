@@ -46,7 +46,7 @@ export const Input = ({
       {!!value?.length && (
         <button
           onClick={handleReset}
-          className={clsx(styles.iconWrapper, styles.inputCloseButton)}
+          className={styles.inputCloseButton}
         >
           <CloseIcon />
         </button>
