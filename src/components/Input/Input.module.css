@@ -1,0 +1,36 @@
+.inputWrapper {
+  color: var(--color-text-black);
+  font-size: 16px;
+  display: flex;
+  line-height: 30px;
+  padding-right: 10px;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputRow {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inputWrapper input {
+  width: 100%;
+}
+
+.inputWrapperUnderlined {
+  border-bottom: 1px var(--color-border) solid;
+}
+
+.inputWrapperBordered {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px var(--color-border-gray) solid;
+}
+
+.inputCloseButton {
+  cursor: pointer;
+  padding: 2px;
+}
