@@ -6,8 +6,8 @@ import clsx from '@/utils/classNames.ts';
 import styles from './Input.module.css';
 
 type Props = {
-  value: string;
-  onChange: (value: string) => void;
+  value?: string;
+  onChange?: (value: string) => void;
   placeholder?: string;
   variant?: 'bordered' | 'underlined';
   icon?: ReactNode;
@@ -21,11 +21,11 @@ export const Input = ({
   variant = 'underlined'
 }: Props) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onChange(e.target.value);
+    onChange?.(e.target.value);
   };
 
   const handleReset = () => {
-    onChange('');
+    onChange?.('');
   };
 
   return (
@@ -43,10 +43,10 @@ export const Input = ({
           onChange={handleChange}
         />
       </div>
-      {!!value.length && (
+      {!!value?.length && (
         <button
           onClick={handleReset}
-          className={clsx(styles.iconWrapper, styles.closeIconButton)}
+          className={clsx(styles.iconWrapper, styles.inputCloseButton)}
         >
           <CloseIcon />
         </button>

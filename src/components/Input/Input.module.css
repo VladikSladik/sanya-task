@@ -30,8 +30,7 @@
   border: 1px var(--color-border-gray) solid;
 }
 
-.closeIconButton {
+.inputCloseButton {
   cursor: pointer;
-  right: 0;
-  width: 10px;
+  padding: 2px;
 }

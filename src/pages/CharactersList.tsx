@@ -20,16 +20,16 @@ export const CharactersList = () => {
         <Input
           icon={<SearchIcon />}
           value={value2}
-          variant={'bordered'}
+          variant='bordered'
           onChange={(value) => setvalue2(value)}
-          placeholder={'Введите текст'}
+          placeholder='Введите текст'
         />
 
         <Input
           value={value}
-          variant={'underlined'}
+          variant='underlined'
           onChange={(value) => setValue(value)}
-          placeholder={'Введите текст'}
+          placeholder='Введите текст'
         />
       </div>
     </div>
